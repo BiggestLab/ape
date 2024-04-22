@@ -1,4 +1,4 @@
-from typing import Any, Optional, Union
+from typing import Annotated, Any, Optional, Union
 
 from eth_pydantic_types import Address as _Address
 from eth_pydantic_types import HashBytes20, HashStr20
@@ -6,11 +6,6 @@ from eth_typing import ChecksumAddress
 from pydantic_core.core_schema import ValidationInfo
 
 from ape.utils.basemodel import ManagerAccessMixin
-
-try:
-    from typing import Annotated  # type: ignore
-except ImportError:
-    from typing_extensions import Annotated  # type: ignore
 
 RawAddress = Union[str, int, HashStr20, HashBytes20]
 """
